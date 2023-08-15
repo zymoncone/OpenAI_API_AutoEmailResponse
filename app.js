@@ -1,6 +1,7 @@
 
-/* OpenAI API Key will read from text file input */
+/* OpenAI API Key will read from text file input from readFile() */
 var OPENAI_API_KEY = ''
+const fileInputAPI_Key = document.getElementById("inputFileToRead")
 const submitButton = document.querySelector('#submit')
 const outPutElement = document.querySelector('#output')
 const clearButton = document.querySelector('button')
@@ -52,16 +53,16 @@ function autoResize() {
     }
 }
 
-document.getElementById("inputFileToRead")
-  .addEventListener("change", function () {
-    var fr = new FileReader();
-    fr.readAsText(this.files[0]);
+function readFile() {
+    var fr = new FileReader()
+    fr.readAsText(this.files[0])
     fr.onload = function () {
-        console.log(fr.result);
-        OPENAI_API_KEY = fr.result;
-    };  
-  });
+        // console.log(fr.result)
+        OPENAI_API_KEY = fr.result
+    }
+}
 
+fileInputAPI_Key.addEventListener("change", readFile)
 submitButton.addEventListener('click', getMessage)
 clearButton.addEventListener('click', clearInput)
 emailInput.addEventListener('input', autoResize, false)
