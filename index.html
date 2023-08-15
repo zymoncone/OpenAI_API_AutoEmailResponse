@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open AI Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function Expand(obj){
+        if (!obj.savesize) obj.savesize=obj.size;
+            obj.size=Math.max(obj.savesize,obj.value.length);
+        }
+     </script>
+</head>
+<body>
+
+<section class="main">
+    <h1>Make Emails Easy</h1>
+    <button>clear chat box</button>
+    <p id="output"></p>
+    <div class="bottom-section">
+        <h3>Paste Email To Respond To:</h3>
+        <div class="input-container">
+
+            <textarea id="email-input" type="text">Paste your email here!</textarea>
+            
+            <div id="submit">
+                [ENTER]
+            </div>
+        </div>
+    </div>
+</section>
+
+<input type="file" id="inputFileToRead"/>
+<script src="app.js"></script>
+</body>
+</html>
