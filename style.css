@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Rubik+Iso&display=swap');
+
 * {
     color: black;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 body {
@@ -10,10 +13,16 @@ body {
 }
 
 h1 {
-    font-size: 33px;
-    font-weight: 600;
-    padding: 100px 0px 30px 0px;
+    font-size: 48px;
+    font-family: 'Rubik Iso', cursive;
+    padding: 100px 0px 0px 0px;
     margin: 100px 0px 0px 0px;
+}
+
+h3 {
+    position: relative;
+    left: -225px;
+    margin-bottom: 5px;
 }
 
 .main {
@@ -21,6 +30,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    /* justify-content: space-between; */
     height: 100vh;
     width: 100%;
 }
@@ -32,7 +42,7 @@ h1 {
     justify-content: center;
     align-items: center;
     padding-bottom: 10px;
-    margin-top: 50vh;
+    margin-top: 1vh;
 }
 
 
@@ -44,7 +54,8 @@ h1 {
     font-size: 15px;
     padding: 12px 15px;
     border-radius: 5px;
-    box-shadow: black;
+    box-shadow: rgba(95, 65, 0, 0.4) 0 4px 5px,
+    rgba(95, 65, 0, 0.3) 5px 4px 5px;
 }
 
 
@@ -70,13 +81,12 @@ button {
     margin: 0px;
 }
 
-h3 {
-    position: relative;
-    left: -212px;
-    margin-bottom: 5px;
-}
-
 #output {
     width: 100%;
-    max-width: 650px;
+    max-width: 600px;
+    white-space: pre-wrap;
+    background-color: burlywood;
+    border-radius: 10px;
+    border: solid 0.5px;
+    padding: 10px;
 }
