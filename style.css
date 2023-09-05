@@ -36,7 +36,7 @@ h1 {
 }
 
 
-#email-input {
+#entry {
     border: solid 0.5px;
     background-color: burlywood;
     width: 100%;
@@ -57,8 +57,9 @@ h1 {
 .input-container #submit {
     position: absolute;
     right: -20px;
-    bottom: 18px;
+    bottom: 15px;
     cursor: pointer;
+    font-size: x-large;
 }
 
 button {
@@ -73,4 +74,9 @@ h3 {
     position: relative;
     left: -212px;
     margin-bottom: 5px;
+}
+
+#output {
+    width: 100%;
+    max-width: 650px;
 }

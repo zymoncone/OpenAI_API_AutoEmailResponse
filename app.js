@@ -5,14 +5,14 @@ const fileInputAPI_Key = document.getElementById("inputFileToRead")
 const submitButton = document.querySelector('#submit')
 const outPutElement = document.querySelector('#output')
 const clearButton = document.querySelector('button')
-const emailInput = document.querySelector('#email-input')
+const input = document.querySelector('#entry')
 
 
 
 async function getMessage() {
     console.log('clicked')
     
-    var emailSample = "How would I respond to this email in a nice way?" + emailInput.value
+    var textSample = "What can I make with these ingredients? " + input.value
     const options = {
         method: 'POST',
         headers: {
@@ -21,7 +21,7 @@ async function getMessage() {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: emailSample}],
+            messages: [{role: "user", content: textSample}],
             max_tokens: 100
         })
     }
@@ -32,7 +32,7 @@ async function getMessage() {
         outPutElement.textContent = data.choices[0].message.content
         if (data.choices[0].message.content) {
             const pElement = document.createElement('p')
-            pElement.textContent = emailInput.value
+            pElement.textContent = input.value
         }
     } catch {
 
@@ -41,7 +41,7 @@ async function getMessage() {
 
 function clearInput () {
     console.log(this.scrollHeight)
-    emailInput.value = ''
+    input.value = ''
     
 }
 
@@ -65,4 +65,4 @@ function readFile() {
 fileInputAPI_Key.addEventListener("change", readFile)
 submitButton.addEventListener('click', getMessage)
 clearButton.addEventListener('click', clearInput)
-emailInput.addEventListener('input', autoResize, false)
+input.addEventListener('input', autoResize, false)
